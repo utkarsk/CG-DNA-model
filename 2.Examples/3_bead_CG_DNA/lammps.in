@@ -1,0 +1,115 @@
+# 3-bead CG-DNA simulation at T = 300 K and 100 mM salt
+
+###### VARIABLES #######
+variable    T equal 300
+variable    damp equal 1000
+variable    seedV equal 4928421
+variable    seedT equal 3278431
+variable    dt equal 10.0
+variable    thermointrv equal 50000
+variable    dumpintrv equal 1000000
+variable    runtime equal 50000000
+
+###### BOX ############
+units       real
+dimension   3
+boundary    p p p
+atom_style  full
+read_data   in.data
+
+###### pair styles ##########
+bond_style  harmonic
+angle_style cosine/squared
+
+pair_style  hybrid lj1210dna/3bead 6.2 ljlambda 0.1 0 35.0
+dielectric  80.0
+
+
+# pairwise coefficients
+
+bond_coeff          1   50.000000    5.750000
+bond_coeff          2   50.000000    5.500000
+bond_coeff          3   50.000000    1.950000
+
+angle_coeff         1   80.000000  180.000000
+angle_coeff         2   40.000000  180.000000
+
+pair_coeff          1       1   ljlambda    4.000000   5.500    0.000000   6.174  35.000
+pair_coeff          1       2   ljlambda    4.000000   5.500    0.000000   6.174   0.000
+pair_coeff          1       3   ljlambda    0.000000   0.000    0.000000   0.000   0.000
+pair_coeff          1       4   ljlambda    4.000000   5.500    0.000000   6.174   0.000
+pair_coeff          1       5   ljlambda    0.000000   0.000    0.000000   0.000   0.000
+pair_coeff          1       6   ljlambda    4.000000   5.500    0.000000   6.174   0.000
+pair_coeff          1       7   ljlambda    0.000000   0.000    0.000000   0.000   0.000
+pair_coeff          1       8   ljlambda    4.000000   5.500    0.000000   6.174   0.000
+pair_coeff          1       9   ljlambda    0.000000   0.000    0.000000   0.000   0.000
+pair_coeff          2       2   lj1210dna/3bead   11.000000   3.600    4.000000   5.500   1   6.200
+pair_coeff          2       3   ljlambda    0.000000   0.000    0.000000   0.000   0.000
+pair_coeff          2       4   lj1210dna/3bead    8.300000   3.600    4.000000   5.500   1   6.200
+pair_coeff          2       5   ljlambda    0.000000   0.000    0.000000   0.000   0.000
+pair_coeff          2       6   lj1210dna/3bead    9.200000   3.600    4.000000   5.500   1   6.200
+pair_coeff          2       7   ljlambda    0.000000   0.000    0.000000   0.000   0.000
+pair_coeff          2       8   lj1210dna/3bead   10.300000   3.600    4.000000   5.500   1   6.200
+pair_coeff          2       9   ljlambda    0.000000   0.000    0.000000   0.000   0.000
+pair_coeff          3       3   ljlambda    0.000000   0.000    0.000000   0.000   0.000
+pair_coeff          3       4   ljlambda    0.000000   0.000    0.000000   0.000   0.000
+pair_coeff          3       5   lj1210dna/3bead   10.400000   1.650    0.000000   0.000   0   3.300
+pair_coeff          3       6   ljlambda    0.000000   0.000    0.000000   0.000   0.000
+pair_coeff          3       7   ljlambda    0.000000   0.000    0.000000   0.000   0.000
+pair_coeff          3       8   ljlambda    0.000000   0.000    0.000000   0.000   0.000
+pair_coeff          3       9   ljlambda    0.000000   0.000    0.000000   0.000   0.000
+pair_coeff          4       4   lj1210dna/3bead    6.200000   3.600    4.000000   5.500   1   6.200
+pair_coeff          4       5   ljlambda    0.000000   0.000    0.000000   0.000   0.000
+pair_coeff          4       6   lj1210dna/3bead    6.900000   3.600    4.000000   5.500   1   6.200
+pair_coeff          4       7   ljlambda    0.000000   0.000    0.000000   0.000   0.000
+pair_coeff          4       8   lj1210dna/3bead    7.800000   3.600    4.000000   5.500   1   6.200
+pair_coeff          4       9   ljlambda    0.000000   0.000    0.000000   0.000   0.000
+pair_coeff          5       5   ljlambda    0.000000   0.000    0.000000   0.000   0.000
+pair_coeff          5       6   ljlambda    0.000000   0.000    0.000000   0.000   0.000
+pair_coeff          5       7   ljlambda    0.000000   0.000    0.000000   0.000   0.000
+pair_coeff          5       8   ljlambda    0.000000   0.000    0.000000   0.000   0.000
+pair_coeff          5       9   ljlambda    0.000000   0.000    0.000000   0.000   0.000
+pair_coeff          6       6   lj1210dna/3bead    7.700000   3.600    4.000000   5.500   1   6.200
+pair_coeff          6       7   ljlambda    0.000000   0.000    0.000000   0.000   0.000
+pair_coeff          6       8   lj1210dna/3bead    8.600000   3.600    4.000000   5.500   1   6.200
+pair_coeff          6       9   ljlambda    0.000000   0.000    0.000000   0.000   0.000
+pair_coeff          7       7   ljlambda    0.000000   0.000    0.000000   0.000   0.000
+pair_coeff          7       8   ljlambda    0.000000   0.000    0.000000   0.000   0.000
+pair_coeff          7       9   lj1210dna/3bead    8.500000   1.650    0.000000   0.000   0   3.300
+pair_coeff          8       8   lj1210dna/3bead    9.700000   3.600    4.000000   5.500   1   6.200
+pair_coeff          8       9   ljlambda    0.000000   0.000    0.000000   0.000   0.000
+pair_coeff          9       9   ljlambda    0.000000   0.000    0.000000   0.000   0.000
+
+special_bonds lj/coul 0.0 1.0 1.0
+
+neighbor    2.0 multi
+
+### Energy minimization
+minimize    1.0e-4 1.0e-6 1000 100000
+
+### production ###
+
+#### Time step
+reset_timestep  0
+timestep        ${dt} #fs
+
+### Ensemble / Thermostat
+run_style       verlet
+velocity        all create $T ${seedV}
+fix             fix1 all nve
+fix             fix2 all langevin $T $T ${damp} ${seedT}
+
+### Outputting useful information in the log file
+thermo          ${thermointrv}
+thermo_style    custom step temp pe ke evdwl ecoul ebond eangle
+
+# Saving the simulation snapshots in a trajectory file
+dump            mydump1 all custom ${dumpintrv} dna.dumplammps.* id type x y z ix iy iz
+dump_modify     mydump1 sort id
+
+# Specifying the runlength
+run             ${runtime}
+
+# Writing restart files
+write_restart   restart.bin.*
+write_data      an.* nocoeff
