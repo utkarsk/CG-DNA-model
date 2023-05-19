@@ -1,1 +1,1 @@
-Sample input files for running simulation of a DNA duplex (S1: 5´-GCGTCATACAGTGC-3´ and its complement S2: 5´-GCACTGTATGACGC-3´) using the 2-bead CG-DNA model at T = 300 K and 100 mM salt concentration
+Sample input files for running simulation of a DNA duplex (S1: 5´-GCGTCATACAGTGC-3´ and its complement S2: 5´-GCACTGTATGACGC-3´) using the 2-bead CG-DNA model at T = 300 K and 100 mM salt concentration.
