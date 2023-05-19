@@ -1,9 +1,10 @@
 # CG-DNA-model
-# A coarse-grained DNA model to study protein-DNA interactions and liquid-liquid phase separation: Application for mechanism and regulation beyond the Nucleosome
-**Authors:** Utkarsh Kapoor [1], Young C. Kim [2], Jeetain Mittal [1] <br>
+# A coarse-grained DNA model to study protein-DNA interactions and liquid-liquid phase separation
+**Authors:** Utkarsh Kapoor [1], Young C. Kim [2], Jeetain Mittal [1,3,4] <br>
 [1] Artie McFerrin Department of Chemical Engineering, Texas A&M University, College Station, Texas 78743, United States <br>
-[2] Center for Materials Physics and Technology, Naval Research Laboratory, Washington, District of Columbia
-
+[2] Center for Materials Physics and Technology, Naval Research Laboratory, Washington, District of Columbia <br>
+[3] Department of Chemistry, Texas A&M University, College Station, Texas 78743, United States <br>
+[4] Interdisciplinary Graduate Program in Genetics in Genomics, Texas A&M University, College Station, Texas 78743, United States <br>
 
 This directory contains the source code required to run simulations of the 2-bead and 3-bead coarse-grained DNA models within the LAMMPS MD package. The directory also contains sample input files for running simulation of a DNA duplex at a given temperature. These coarse-grained models are highly-robust and are capable of studying processes such as hybridization and DNA protein interactions. For details about the model itself and it's development, please see Kapoor et al. (DOI: )
 
