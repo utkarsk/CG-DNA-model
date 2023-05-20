@@ -6,7 +6,7 @@
 [3] Department of Chemistry, Texas A&M University, College Station, Texas 78743, United States <br>
 [4] Interdisciplinary Graduate Program in Genetics in Genomics, Texas A&M University, College Station, Texas 78743, United States <br>
 
-This directory contains the source code required to run simulations of the 2-bead and 3-bead coarse-grained DNA models within the LAMMPS MD package. The directory also contains sample input files for running simulation of a DNA duplex at a given temperature. These coarse-grained models are highly-robust and are capable of studying processes such as hybridization and DNA protein interactions. For details about the model itself and it's development, please see Kapoor et al. (DOI: )
+This directory contains the source code required to run simulations of the 2-bead and 3-bead coarse-grained DNA models within the LAMMPS MD package. The directory also contains sample input files for running simulation of a DNA duplex at a given temperature. These coarse-grained models are highly-robust and are capable of studying processes such as hybridization and DNA protein interactions. For details about the model itself and it's development, please see Kapoor et al. (bioRxiv 2023.05.19.541513; doi: https://doi.org/10.1101/2023.05.19.541513)
 
 ### 1. Source Codes
 CG simulations were performed using the LAMMPS molecular dynamics simulations package (Oct 2020 version), in which CG-DNA-model codes have been implemented. To run these codes successfully one would require LAMMPS Oct 2020 package installed with the files within 1.LAMMPS_subroutines folder.
